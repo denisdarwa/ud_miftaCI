@@ -37,40 +37,19 @@
                     <div class="header-left">
                         <div class="dropdown for-message">
                             <div class="col-sm-12">
-                <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                  <span class="badge badge-pill badge-success">Karyawan</span> Selamat Datang Karyawan
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
+                                <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                                Selamat Datang Karyawan
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                        <!-- <a href="<?= base_url()?>welcome/logout"><button type="submit" >Logout</button></a> -->
+                    
                      <form action="<?= base_url()?>welcome/logout">
-                <div class="col-sm-5" >
-                    <div class="language-select dropdown" id="language-select">
-                        <button type="submit">Logout</button>
-                        <!-- //<a href="">Logout</a> -->
-                        <div class="dropdown-menu" aria-labelledby="language" >
-                            <div class="dropdown-item">
-                                <span class="flag-icon flag-icon-fr"></span>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-es"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-us"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-it"></i>
-                            </div>
+                        <div class="float-right">
+                            <button type="submit" class="btn btn-danger">Logout</button>
                         </div>
-                    </div>
-
-                </div>
-                </form>
+                    </form>
             </div>
 
         </header><!-- /header -->

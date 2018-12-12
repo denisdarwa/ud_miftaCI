@@ -14,10 +14,10 @@
                 <ul class="nav navbar-nav">
                     <h3 class="menu-title">Kelola Penjualan</h3><!-- /.menu-title -->
                     <li>
-                        <a href="<?php echo base_url();?>admin/view_penjualan" > <i></i>- Penjualan</a>
+                        <a href="<?php echo base_url();?>admin/penjualan" > <i></i>- Penjualan</a>
                     </li>
                      <li>
-                        <a href="<?php echo base_url();?>admin/L_penjualan" > <i></i>- Laporan Penjualan</a>
+                        <a href="<?php echo base_url();?>admin/laporan" > <i></i>- Laporan Penjualan</a>
                     </li>
 
                     <h3 class="menu-title">Kelola Barang</h3><!-- /.menu-title -->
@@ -65,10 +65,7 @@
                         <div class="dropdown for-message">
                             <div class="col-sm-12">
                 <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                  <span class="badge badge-pill badge-success">Admin</span> Selamat Datang Admin
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                  Selamat Datang Admin
                 </div>
             </div>
                         </div>
@@ -78,7 +75,7 @@
                      <form action="<?= base_url()?>welcome/logout">
                 <div class="col-sm-5" >
                     <div class="language-select dropdown" id="language-select">
-                        <button type="submit">Logout</button>
+                        <button type="submit" class="btn btn-danger">Logout</button>
                         <!-- //<a href="">Logout</a> -->
                         <div class="dropdown-menu" aria-labelledby="language" >
                             <div class="dropdown-item">

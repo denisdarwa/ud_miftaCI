@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->model('barang');
 		$this->load->model('distributor');
 		$this->load->model('karyawan');
-		$this->load->model('penjualan');
+		$this->load->model('penjualan_model');
 
 	}
 
@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
 	}
 //==============================================================
 //==============================================================
-//Data Barang=================================================
+//Data Barang===================================================
 //==============================================================
 
 	public function view_barang()
@@ -94,6 +94,7 @@ class Admin extends CI_Controller {
 		$this->barang->update_data($where,$data,'barang');
 		redirect('admin/tampil_barang');
 	}
+
 	public function hapus($id_barang)
 	{
 		$where = array('id_barang' => $id_barang);
@@ -102,7 +103,7 @@ class Admin extends CI_Controller {
 	}
 //==============================================================
 //==============================================================
-//Data Distributor=================================================
+//Data Distributor==============================================
 //==============================================================
 
 	public function view_distributor()
@@ -112,6 +113,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/distributor/tambah_distributor');
 		$this->load->view('templates/footer');
 	}
+
 	public function tambah_distributor()
 	{
 		$id_distributor = $this->input->post('id_distributor');
@@ -125,6 +127,7 @@ class Admin extends CI_Controller {
 		$this->distributor->tambah_distributor($data,'distributor');
 		redirect('admin/view_distributor');
 	}
+
 	public function tampil_distributor()
 	{
 		$data['user'] = $this->distributor->tampil_data()->result();
@@ -133,6 +136,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/distributor/edit_distributor',$data);
 		$this->load->view('templates/footer');
 	}
+
 	public function edit_distributor($id)
 	{
 		$where = array('id' => $id);
@@ -142,6 +146,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/distributor/update_distributor',$data);
 		$this->load->view('templates/footer');
 	}
+
 	public function update_distributor(){
 		$id = $this->input->post('id');
 		$id_distributor = $this->input->post('id_distributor');
@@ -161,6 +166,7 @@ class Admin extends CI_Controller {
 		$this->distributor->update_distributor($where,$data,'distributor');
 		redirect('admin/tampil_distributor');
 	}
+
 	public function hapus_distributor($id)
 	{
 		$where = array('id' => $id);
@@ -178,6 +184,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/karyawan/tambah_karyawan');
 		$this->load->view('templates/footer');
 	}
+
 	public function tambah_karyawan()
 	{
 		$nama_karyawan = $this->input->post('nama_karyawan');
@@ -189,6 +196,7 @@ class Admin extends CI_Controller {
 		$this->karyawan->tambah($data,'karyawan');
 		redirect('admin/view_karyawan');
 	}
+
 	public function tampil_karyawan()
 	{
 		$data['user'] = $this->karyawan->tampil_data()->result();
@@ -197,6 +205,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/karyawan/edit_karyawan',$data);
 		$this->load->view('templates/footer');
 	}
+
 	public function edit_karyawan($id)
 	{
 		$where = array('id' => $id);
@@ -206,6 +215,7 @@ class Admin extends CI_Controller {
 		$this->load->view('home/admin/karyawan/update_karyawan',$data);
 		$this->load->view('templates/footer');
 	}
+
 	public function update_karyawan(){
 		$id = $this->input->post('id');
 		$nama_karyawan = $this->input->post('nama_karyawan');
@@ -223,6 +233,7 @@ class Admin extends CI_Controller {
 		$this->karyawan->update($where,$data,'karyawan');
 		redirect('admin/tampil_karyawan');
 	}
+
 	public function hapus_karyawan($id)
 	{
 		$where = array('id' => $id);
@@ -231,26 +242,27 @@ class Admin extends CI_Controller {
 	}
 //==============================================================
 //==============================================================
-//Data Penjualan=================================================
+//Data Penjualan================================================
 //==============================================================
-	public function view_penjualan()
+	public function penjualan()
+	{
+		$data['barang'] = null;
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu_admin');
+		$this->load->view('home/penjualan', $data);
+		$this->load->view('templates/footer');
+	}
+
+//==============================================================
+//==============================================================
+//Laporan=======================================================
+//==============================================================
+	public function laporan()
 	{
 		$this->load->view('templates/header');
 		$this->load->view('templates/menu_admin');
-		$this->load->view('home/penjualan');
+		$this->load->view('home/admin/laporan');
 		$this->load->view('templates/footer');
 	}
-	public function penjualan()
-	{
-		$jual_barang = $this->input->post('jual_barang');
-		$jml_barang = $this->input->post('jml_barang');
-		$data = array(
-			'jual_barang' => $jual_barang,
-			'jml_barang' => $jml_barang
-			 );
-		$this->penjualan->input_barang($data,'penjualan');
-		redirect('admin');
-	}
-
 }
 ?>

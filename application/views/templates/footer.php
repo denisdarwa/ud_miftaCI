@@ -1,5 +1,5 @@
     </body>
-	<script src="<?=base_url()?>/js/jquery-3.2.1.min.js"/>
+	<script src="<?= base_url()?>assets/js/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="<?php echo base_url();?>assetsadmin/js/plugins.js"></script>
     <script src="<?php echo base_url();?>assetsadmin/js/main.js"></script>
@@ -28,5 +28,4 @@
             } );
         } )( jQuery );
     </script>
-
 </html>

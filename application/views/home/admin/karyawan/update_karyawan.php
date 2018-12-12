@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<center>
+	<div class="container-fluid text-center">
 		<h3>Edit Data Karyawan</h3>
-	</center>
+	</div>
 	<?php foreach($user as $u){ ?>
 	<form action="<?php echo base_url().'admin/update_karyawan'; ?>" method="post">
 		<table style="margin:20px auto;">

@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav">
                     <h3 class="menu-title">Penjualan</h3><!-- /.menu-title -->
                     <li>
-                        <a href="<?php echo base_url();?>karyawan" > <i></i>- Transaksi Penjualan</a>
+                        <a href="<?php echo base_url();?>karyawan/penjualan" > <i></i>- Transaksi Penjualan</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

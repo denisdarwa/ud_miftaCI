@@ -12,6 +12,14 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <h3 class="menu-title">Kelola Penjualan</h3><!-- /.menu-title -->
+                    <li>
+                        <a href="<?php echo base_url();?>admin/view_penjualan" > <i></i>- Penjualan</a>
+                    </li>
+                     <li>
+                        <a href="<?php echo base_url();?>admin/L_penjualan" > <i></i>- Laporan Penjualan</a>
+                    </li>
+
                     <h3 class="menu-title">Kelola Barang</h3><!-- /.menu-title -->
                     <li>
                         <a href="<?php echo base_url();?>admin/view_barang" > <i></i>- Tambah Barang</a>

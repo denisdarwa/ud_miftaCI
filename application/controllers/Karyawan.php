@@ -10,7 +10,9 @@ class Karyawan extends CI_Controller {
 	// } -->
 
 	function index(){
-	$this->load->view('menu_karyawan');
+	$this->load->view('templates/header');
+	$this->load->view('templates/menu_karyawan');
+	$this->load->view('templates/footer');
 	}
 }
 ?>

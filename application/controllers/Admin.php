@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->model('barang');
 		$this->load->model('distributor');
 		$this->load->model('karyawan');
+		$this->load->model('penjualan');
 
 	}
 
@@ -228,7 +229,28 @@ class Admin extends CI_Controller {
 		$this->karyawan->hapus($where,'karyawan');
 		redirect('admin/tampil_karyawan');
 	}
-
+//==============================================================
+//==============================================================
+//Data Penjualan=================================================
+//==============================================================
+	public function view_penjualan()
+	{
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu_admin');
+		$this->load->view('home/penjualan');
+		$this->load->view('templates/footer');
+	}
+	public function penjualan()
+	{
+		$jual_barang = $this->input->post('jual_barang');
+		$jml_barang = $this->input->post('jml_barang');
+		$data = array(
+			'jual_barang' => $jual_barang,
+			'jml_barang' => $jml_barang
+			 );
+		$this->penjualan->input_barang($data,'penjualan');
+		redirect('admin');
+	}
 
 }
 ?>
